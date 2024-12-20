@@ -1,5 +1,7 @@
 <script lang="ts">
-	let { data } = $props();
+	import { Sun, Moon, Menu } from 'lucide-svelte';
+
+	let isDarkMode = $state(false);
 
 	const apps = [
 		{ name: 'Manuscript', url: 'http://manuscript.faith', description: 'A powerful writing tool' },
@@ -10,6 +12,21 @@
 		},
 		{ name: 'Relay', url: 'http://relayx.ai', description: 'Advanced communication' }
 	];
+
+	$effect(() => {
+		if (typeof window !== 'undefined') {
+			isDarkMode =
+				localStorage.getItem('theme') === 'dark' ||
+				(!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+		}
+	});
+
+	function toggleTheme() {
+		isDarkMode = !isDarkMode;
+		const theme = isDarkMode ? 'dark' : 'light';
+		localStorage.setItem('theme', theme);
+		document.documentElement.setAttribute('data-theme', theme);
+	}
 </script>
 
 <svelte:head>
@@ -17,13 +34,25 @@
 	<meta name="description" content="Building apps and games that move the human spirit forward" />
 </svelte:head>
 
-<div class="bg-base-100 min-h-screen">
+<div class="min-h-screen bg-base-100">
 	<!-- Navbar -->
-	<div class="navbar bg-base-100 fixed top-0 z-50 border-b">
+	<div class="navbar fixed top-0 z-50 border-b bg-base-100">
 		<div class="navbar-start">
 			<div class="text-xl font-bold">Bold Flight</div>
 		</div>
 		<div class="navbar-end">
+			<button
+				class="btn btn-ghost mr-4"
+				on:click={toggleTheme}
+				aria-label={isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'}
+			>
+				{#if isDarkMode}
+					<Sun aria-hidden="true" />
+				{:else}
+					<Moon aria-hidden="true" />
+				{/if}
+			</button>
+
 			<div class="hidden lg:flex">
 				<ul class="menu menu-horizontal px-1">
 					<li><a href="#home">Home</a></li>
@@ -32,38 +61,27 @@
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</div>
+
 			<div class="dropdown dropdown-end lg:hidden">
-				<label tabindex="0" class="btn btn-ghost">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						class="h-5 w-5"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke="currentColor"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M4 6h16M4 12h16M4 18h16"
-						/>
-					</svg>
-				</label>
+				<button class="btn btn-ghost" aria-label="Open menu">
+					<Menu aria-hidden="true" />
+				</button>
 				<ul
-					tabindex="0"
-					class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+					class="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
+					tabindex="-1"
+					role="menu"
 				>
-					<li><a href="#home">Home</a></li>
-					<li><a href="#apps">Apps</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
+					<li role="none"><a href="#home" role="menuitem">Home</a></li>
+					<li role="none"><a href="#apps" role="menuitem">Apps</a></li>
+					<li role="none"><a href="#about" role="menuitem">About</a></li>
+					<li role="none"><a href="#contact" role="menuitem">Contact</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 
 	<!-- Hero Section -->
-	<section id="home" class="hero bg-base-200 min-h-screen">
+	<section id="home" class="hero min-h-screen bg-base-200">
 		<div class="hero-content text-center">
 			<div class="max-w-md">
 				<h1 class="text-5xl font-bold">A small but mighty studio</h1>
@@ -83,8 +101,11 @@
 							<h3 class="card-title">{app.name}</h3>
 							<p>{app.description}</p>
 							<div class="card-actions justify-end">
-								<a href={app.url} target="_blank" rel="noopener noreferrer" class="btn btn-primary"
-									>Visit Site</a
+
+									href={app.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="btn btn-primary">Visit Site</a
 								>
 							</div>
 						</div>
@@ -115,7 +136,7 @@
 	</section>
 
 	<!-- Footer -->
-	<footer class="footer footer-center bg-base-200 text-base-content p-10">
+	<footer class="footer footer-center bg-base-200 p-10 text-base-content">
 		<div>
 			<p>© 2024 Bold Flight LLC. All rights reserved.</p>
 		</div>
