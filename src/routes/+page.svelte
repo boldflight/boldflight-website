@@ -17,7 +17,8 @@
 		if (typeof window !== 'undefined') {
 			isDarkMode =
 				localStorage.getItem('theme') === 'dark' ||
-				(!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+				(!localStorage.getItem('theme') &&
+					window.matchMedia('(prefers-color-scheme: dark)').matches);
 		}
 	});
 
@@ -34,16 +35,16 @@
 	<meta name="description" content="Building apps and games that move the human spirit forward" />
 </svelte:head>
 
-<div class="min-h-screen bg-base-100">
+<div class="bg-base-100 min-h-screen">
 	<!-- Navbar -->
-	<div class="navbar fixed top-0 z-50 border-b bg-base-100">
+	<div class="navbar bg-base-100 fixed top-0 z-50 border-b">
 		<div class="navbar-start">
 			<div class="text-xl font-bold">Bold Flight</div>
 		</div>
 		<div class="navbar-end">
 			<button
 				class="btn btn-ghost mr-4"
-				on:click={toggleTheme}
+				onclick={toggleTheme}
 				aria-label={isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'}
 			>
 				{#if isDarkMode}
@@ -67,7 +68,7 @@
 					<Menu aria-hidden="true" />
 				</button>
 				<ul
-					class="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
+					class="menu dropdown-content menu-sm rounded-box bg-base-100 z-[1] mt-3 w-52 p-2 shadow"
 					tabindex="-1"
 					role="menu"
 				>
@@ -81,7 +82,7 @@
 	</div>
 
 	<!-- Hero Section -->
-	<section id="home" class="hero min-h-screen bg-base-200">
+	<section id="home" class="hero bg-base-200 min-h-screen">
 		<div class="hero-content text-center">
 			<div class="max-w-md">
 				<h1 class="text-5xl font-bold">A small but mighty studio</h1>
@@ -101,11 +102,8 @@
 							<h3 class="card-title">{app.name}</h3>
 							<p>{app.description}</p>
 							<div class="card-actions justify-end">
-
-									href={app.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="btn btn-primary">Visit Site</a
+								<a href={app.url} target="_blank" rel="noopener noreferrer" class="btn btn-primary"
+									>Visit Site</a
 								>
 							</div>
 						</div>
@@ -136,7 +134,7 @@
 	</section>
 
 	<!-- Footer -->
-	<footer class="footer footer-center bg-base-200 p-10 text-base-content">
+	<footer class="footer footer-center bg-base-200 text-base-content p-10">
 		<div>
 			<p>© 2024 Bold Flight LLC. All rights reserved.</p>
 		</div>
