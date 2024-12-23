@@ -149,7 +149,7 @@ We craft code that moves the human spirit forward.`;
 	<!-- Moonshot Section -->
 	<section class="bg-base-200 py-20">
 		<div class="mx-auto max-w-6xl px-4">
-			<h2 class="mb-12 text-center text-4xl font-bold">Moonshot Project</h2>
+			<h2 class="mb-12 text-center text-4xl font-bold">Moonshot</h2>
 			<div class="card bg-base-100 image-full w-full shadow-xl">
 				<figure>
 					<img src="/moonshot-bg.jpg" alt={moonshot.name} class="w-full" />
