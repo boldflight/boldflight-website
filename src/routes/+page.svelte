@@ -15,7 +15,11 @@
 			description: 'Daily spiritual habits for busy people'
 		},
 		{ name: 'Relay', url: 'http://relayx.ai', description: 'Social media for the rest of us' },
-		{ name: 'SwiftOS', url: 'http://swiftos.dev', description: 'An intelligent OS for the future' }
+		{
+			name: 'SwiftOS',
+			url: 'http://swiftos.dev',
+			description: 'An intelligent OS for digital sovereignty'
+		}
 	];
 
 	$effect(() => {
@@ -36,8 +40,8 @@
 </script>
 
 <svelte:head>
-	<title>Bold Flight - A Small but Mighty Studio</title>
-	<meta name="description" content="Crafting apps and games that move the human spirit forward" />
+	<title>Bold Flight - Crafting code that moves the human spirit forward</title>
+	<meta name="description" content="Crafting code that moves the human spirit forward" />
 	<link rel="preload" as="image" href="/hero-bg.jpg" />
 </svelte:head>
 
@@ -135,8 +139,9 @@
 		<div class="mx-auto max-w-4xl text-center">
 			<h2 class="mb-8 text-4xl font-bold">About Us</h2>
 			<p class="text-xl">
-				Bold Flight is a small but mighty studio committed to making apps and games that inspire,
-				delight, and empower.
+				Bold Flight is a small but mighty studio building apps and games that inspire, delight, and
+				empower. We believe in the public good. We build in the open as much as is practical. We
+				craft code that moves the human spirit forward.
 			</p>
 		</div>
 	</section>
