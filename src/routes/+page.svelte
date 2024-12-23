@@ -14,13 +14,19 @@
 			url: 'http://contemplate.faith',
 			description: 'Daily spiritual habits for busy people'
 		},
-		{ name: 'Relay', url: 'http://relayx.ai', description: 'Social media for the rest of us' },
-		{
-			name: 'SwiftOS',
-			url: 'http://swiftos.dev',
-			description: 'An intelligent OS for digital sovereignty'
-		}
+		{ name: 'Relay', url: 'http://relayx.ai', description: 'Social media for the rest of us' }
 	];
+
+	const moonshot = {
+		name: 'SwiftOS',
+		url: 'http://swiftos.dev',
+		description: 'An intelligent OS for digital sovereignty'
+	};
+
+	const aboutText = `Bold Flight is a small but mighty studio building apps and games that inspire, delight, and empower.
+We believe in the public good.
+We build in the open as much as is practical.
+We craft code that moves the human spirit forward.`;
 
 	$effect(() => {
 		if (typeof window !== 'undefined') {
@@ -134,14 +140,38 @@
 		</div>
 	</section>
 
+	<!-- Moonshot Section -->
+	<section class="bg-base-200 py-20">
+		<div class="mx-auto max-w-6xl px-4">
+			<h2 class="mb-12 text-center text-4xl font-bold">Moonshot Project</h2>
+			<div class="card bg-base-100 image-full w-full shadow-xl">
+				<figure>
+					<img src="/moonshot-bg.jpg" alt={moonshot.name} class="w-full" />
+				</figure>
+				<div class="card-body">
+					<h3 class="card-title text-3xl">{moonshot.name}</h3>
+					<p class="text-xl">{moonshot.description}</p>
+					<div class="card-actions justify-end">
+						<a
+							href={moonshot.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="btn btn-primary"
+						>
+							Learn More
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- About Section -->
 	<section id="about" class="bg-base-200 px-4 py-20">
 		<div class="mx-auto max-w-4xl text-center">
 			<h2 class="mb-8 text-4xl font-bold">About Us</h2>
-			<p class="text-xl">
-				Bold Flight is a small but mighty studio building apps and games that inspire, delight, and
-				empower. We believe in the public good. We build in the open as much as is practical. We
-				craft code that moves the human spirit forward.
+			<p class="whitespace-pre-line text-xl">
+				{aboutText}
 			</p>
 		</div>
 	</section>
