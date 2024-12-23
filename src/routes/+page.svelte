@@ -23,6 +23,12 @@
 		description: 'An intelligent OS for digital sovereignty'
 	};
 
+	const atlas = {
+		name: 'The Legend of Atlas',
+		url: 'http://legendofatlas.com',
+		description: 'Wrestling with the gods'
+	};
+
 	const aboutText = `Bold Flight is a small but mighty studio building apps and games that inspire, delight, and empower.
 We believe in the public good.
 We build in the open as much as is practical.
@@ -54,7 +60,7 @@ We craft code that moves the human spirit forward.`;
 <div class="bg-base-100 min-h-screen">
 	<!-- Navbar -->
 	<div class="navbar bg-base-100 border-base-content/10 fixed top-0 z-50 border-b">
-		<div class="navbar-start">
+		<div class="navbar-start pl-4">
 			<div class="text-xl font-bold">Bold Flight</div>
 		</div>
 		<div class="navbar-end">
@@ -158,6 +164,27 @@ We craft code that moves the human spirit forward.`;
 							rel="noopener noreferrer"
 							class="btn btn-primary"
 						>
+							Learn More
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Games Section -->
+	<section class="bg-base-200 py-20">
+		<div class="mx-auto max-w-6xl px-4">
+			<h2 class="mb-12 text-center text-4xl font-bold">Our Games</h2>
+			<div class="card bg-base-100 image-full w-full shadow-xl">
+				<figure>
+					<img src="/atlas-bg.webp" alt={atlas.name} class="w-full" />
+				</figure>
+				<div class="card-body">
+					<h3 class="card-title text-3xl">{atlas.name}</h3>
+					<p class="text-xl">{atlas.description}</p>
+					<div class="card-actions justify-end">
+						<a href={atlas.url} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
 							Learn More
 						</a>
 					</div>
