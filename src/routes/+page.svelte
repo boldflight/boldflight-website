@@ -218,6 +218,7 @@ We craft code that moves the human spirit forward.`;
 	<!-- Footer -->
 	<footer class="footer footer-center bg-base-200 text-base-content p-10">
 		<div>
+			<p>Made with ❤️ in Tokyo</p>
 			<p>© 2024 Bold Flight LLC. All rights reserved.</p>
 		</div>
 	</footer>
