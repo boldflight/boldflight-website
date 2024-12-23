@@ -47,7 +47,7 @@
 
 <div class="bg-base-100 min-h-screen">
 	<!-- Navbar -->
-	<div class="navbar bg-base-100 fixed top-0 z-50 border-b">
+	<div class="navbar bg-base-100 border-base-content/10 fixed top-0 z-50 border-b">
 		<div class="navbar-start">
 			<div class="text-xl font-bold">Bold Flight</div>
 		</div>
