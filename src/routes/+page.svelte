@@ -4,13 +4,18 @@
 	let isDarkMode = $state(false);
 
 	const apps = [
-		{ name: 'Manuscript', url: 'http://manuscript.faith', description: 'A powerful writing tool' },
+		{
+			name: 'Manuscript',
+			url: 'http://manuscript.faith',
+			description: 'A searchable bible for deep thinkers'
+		},
 		{
 			name: 'Contemplate',
 			url: 'http://contemplate.faith',
-			description: 'Mindfulness and meditation'
+			description: 'Daily spiritual habits for busy people'
 		},
-		{ name: 'Relay', url: 'http://relayx.ai', description: 'Advanced communication' }
+		{ name: 'Relay', url: 'http://relayx.ai', description: 'Social media for the rest of us' },
+		{ name: 'SwiftOS', url: 'http://swiftos.dev', description: 'An intelligent OS for the future' }
 	];
 
 	$effect(() => {
@@ -32,7 +37,7 @@
 
 <svelte:head>
 	<title>Bold Flight - A Small but Mighty Studio</title>
-	<meta name="description" content="Building apps and games that move the human spirit forward" />
+	<meta name="description" content="Crafting apps and games that move the human spirit forward" />
 </svelte:head>
 
 <div class="bg-base-100 min-h-screen">
@@ -85,8 +90,8 @@
 	<section id="home" class="hero bg-base-200 min-h-screen">
 		<div class="hero-content text-center">
 			<div class="max-w-md">
-				<h1 class="text-5xl font-bold">A small but mighty studio</h1>
-				<p class="py-6 text-xl">Building apps and games that move the human spirit forward</p>
+				<h1 class="text-5xl font-bold">Crafting code that moves the human spirit forward</h1>
+				<!-- <p class="py-6 text-xl">Crafting apps and games that move the human spirit forward</p> -->
 			</div>
 		</div>
 	</section>
@@ -117,7 +122,10 @@
 	<section id="about" class="bg-base-200 px-4 py-20">
 		<div class="mx-auto max-w-4xl text-center">
 			<h2 class="mb-8 text-4xl font-bold">About Us</h2>
-			<p class="text-xl">App Studio is dedicated to creating apps that make life easier.</p>
+			<p class="text-xl">
+				Bold Flight is a small but mighty studio committed to making apps and games that inspire,
+				delight, and empower.
+			</p>
 		</div>
 	</section>
 
