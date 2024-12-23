@@ -38,6 +38,7 @@
 <svelte:head>
 	<title>Bold Flight - A Small but Mighty Studio</title>
 	<meta name="description" content="Crafting apps and games that move the human spirit forward" />
+	<link rel="preload" as="image" href="/hero-bg.jpg" />
 </svelte:head>
 
 <div class="bg-base-100 min-h-screen">
@@ -87,11 +88,22 @@
 	</div>
 
 	<!-- Hero Section -->
-	<section id="home" class="hero bg-base-200 min-h-screen">
-		<div class="hero-content text-center">
+	<section id="home" class="hero bg-base-200 relative min-h-screen">
+		<!-- Background image with overlay -->
+		<div
+			class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+			style="background-image: url('/hero-bg.jpg');"
+		>
+			<!-- Dark overlay for better text contrast -->
+			<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+		</div>
+
+		<!-- Content -->
+		<div class="hero-content relative z-10 text-center">
 			<div class="max-w-md">
-				<h1 class="text-5xl font-bold">Crafting code that moves the human spirit forward</h1>
-				<!-- <p class="py-6 text-xl">Crafting apps and games that move the human spirit forward</p> -->
+				<h1 class="text-5xl font-bold text-white drop-shadow-lg">
+					Crafting code that moves the human spirit forward
+				</h1>
 			</div>
 		</div>
 	</section>
