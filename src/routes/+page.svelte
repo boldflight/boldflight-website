@@ -1,4 +1,5 @@
 <script lang="ts">
+	import KofiWidget from '$lib/components/KofiWidget.svelte';
 	import { Sun, Moon, Menu } from 'lucide-svelte';
 
 	let isDarkMode = $state(false);
@@ -57,9 +58,9 @@ We craft code that moves the human spirit forward.`;
 	<link rel="preload" as="image" href="/hero-bg.jpg" />
 </svelte:head>
 
-<div class="bg-base-100 min-h-screen">
+<div class="min-h-screen bg-base-100">
 	<!-- Navbar -->
-	<div class="navbar bg-base-100 border-base-content/10 fixed top-0 z-50 border-b">
+	<div class="navbar fixed top-0 z-50 border-b border-base-content/10 bg-base-100">
 		<div class="navbar-start pl-4">
 			<div class="text-xl font-bold">Bold Flight</div>
 		</div>
@@ -90,7 +91,7 @@ We craft code that moves the human spirit forward.`;
 					<Menu aria-hidden="true" />
 				</button>
 				<ul
-					class="menu dropdown-content menu-sm rounded-box bg-base-100 z-[1] mt-3 w-52 p-2 shadow"
+					class="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
 					tabindex="-1"
 					role="menu"
 				>
@@ -104,7 +105,7 @@ We craft code that moves the human spirit forward.`;
 	</div>
 
 	<!-- Hero Section -->
-	<section id="home" class="hero bg-base-200 relative min-h-screen">
+	<section id="home" class="hero relative min-h-screen bg-base-200">
 		<!-- Background image with overlay -->
 		<div
 			class="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -150,7 +151,7 @@ We craft code that moves the human spirit forward.`;
 	<section class="bg-base-200 py-20">
 		<div class="mx-auto max-w-6xl px-4">
 			<h2 class="mb-12 text-center text-4xl font-bold">Moonshot</h2>
-			<div class="card bg-base-100 image-full w-full shadow-xl">
+			<div class="card image-full w-full bg-base-100 shadow-xl">
 				<figure>
 					<img src="/moonshot-bg.jpg" alt={moonshot.name} class="w-full" />
 				</figure>
@@ -176,7 +177,7 @@ We craft code that moves the human spirit forward.`;
 	<section class="bg-base-200 py-20">
 		<div class="mx-auto max-w-6xl px-4">
 			<h2 class="mb-12 text-center text-4xl font-bold">Our Games</h2>
-			<div class="card bg-base-100 image-full w-full shadow-xl">
+			<div class="card image-full w-full bg-base-100 shadow-xl">
 				<figure>
 					<img src="/atlas-bg.webp" alt={atlas.name} class="w-full" />
 				</figure>
@@ -205,6 +206,7 @@ We craft code that moves the human spirit forward.`;
 
 	<!-- Contact Section -->
 	<section id="contact" class="px-4 py-20">
+		<KofiWidget />
 		<div class="mx-auto max-w-4xl text-center">
 			<h2 class="mb-8 text-4xl font-bold">Contact Us</h2>
 			<p class="text-xl">
@@ -216,7 +218,7 @@ We craft code that moves the human spirit forward.`;
 	</section>
 
 	<!-- Footer -->
-	<footer class="footer footer-center bg-base-200 text-base-content p-10">
+	<footer class="footer footer-center bg-base-200 p-10 text-base-content">
 		<div>
 			<p>Made with ❤️ in Tokyo</p>
 			<p>© 2024 Bold Flight LLC. All rights reserved.</p>
