@@ -1,5 +1,4 @@
 <script lang="ts">
-	import KofiWidget from '$lib/components/KofiWidget.svelte';
 	import { Sun, Moon, Menu } from 'lucide-svelte';
 
 	let isDarkMode = $state(false);
@@ -206,7 +205,6 @@ We craft code that moves the human spirit forward.`;
 
 	<!-- Contact Section -->
 	<section id="contact" class="px-4 py-20">
-		<KofiWidget />
 		<div class="mx-auto max-w-4xl text-center">
 			<h2 class="mb-8 text-4xl font-bold">Contact Us</h2>
 			<p class="text-xl">
@@ -214,6 +212,17 @@ We craft code that moves the human spirit forward.`;
 					>info@boldflight.com</a
 				>
 			</p>
+			<div class="mt-4 flex justify-center">
+				<a href="https://ko-fi.com/K3K41AGET8" target="_blank"
+					><img
+						height="36"
+						style="border:0px;height:36px;"
+						src="https://storage.ko-fi.com/cdn/kofi3.png?v=6"
+						border="0"
+						alt="Buy Me a Coffee at ko-fi.com"
+					/></a
+				>
+			</div>
 		</div>
 	</section>
 
